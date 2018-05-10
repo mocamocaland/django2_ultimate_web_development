@@ -17,12 +17,12 @@ def count(request):
 
     for word in wordlist:
         if word in worddictionary:
-            #Increase
+            # Increase
             worddictionary[word] += 1
         else:
-            #add to the dictionary
+            # add to the dictionary
             worddictionary[word] = 1
 
     sortedwords = sorted(worddictionary.items(), key=operator.itemgetter(1), reverse=True)
 
-    return render(request, 'count.html',{'fulltext':fulltext,'count':len(wordlist),'sortedwords':sortedwords})
+    return render(request, 'count.html', {'fulltext':fulltext, 'count':len(wordlist), 'sortedwords':sortedwords})
